@@ -1,391 +1,685 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- Inter font Family -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <div class="main w-full relative">
-        <!-- Nav bar -->
-        <nav class="bg-black flex justify-between px-32 items-center text-white py-1 border-b-[3px] border-[#FFCC00] fixed w-full z-50 ">
-            <img src="/assets/logo.svg" 
-                class="w-24" loading="lazy">
+      <!-- Nav bar -->
+      <nav
+        class="bg-black shadow flex flex-wrap justify-between px-4 md:px-8 lg:px-16 xl:px-32 items-center text-white py-1 border-b-[3px] border-[#FFCC00] fixed w-full z-50"
+      >
+        <img
+          src="/assets/logo.svg"
+          class="w-16 md:w-20 lg:w-24"
+          loading="lazy"
+        />
 
-            <div class="flex gap-12 ">
-                <h1 class="cursor-pointer hover:text-[#ffcc00] translate-x-6 duration-300">Our Menu</h1>
-                <h1 class="cursor-pointer">Download App</h1>
-                <h1 class="cursor-pointer">About Us</h1>
-                <h1 class="cursor-pointer">Offers</h1>
-                <h1 class="cursor-pointer">Locate</h1> 
-            </div>
-            <div class="flex gap-6">
-                <button>
-                    <i class="fa-solid fa-user" style="color: #ffcc00;"></i>
-                    <a href="https://www.mcdonalds.com/us/en-us.html">Login</a>
-                </button>
-                <button>
-                    <i class="fa-solid fa-magnifying-glass" style="color: #ffcc00;"></i>
-                    Search
-                </button>
-            </div>
-        </nav>
-
-        <!-- Hero section -->
-        <div class="w-full bg-black">
-            <div class="hero-section bg-black flex gap-5 justify-between items-center px-32 pt-10 mx-auto max-w-[1440px]">
-                <!-- Left Container --> 
-                <div class= "max-w-[40%] p-5">
-                    <p class="text-sm font-semibold text-white">SO...WILL YOU EAT ME?</p>
-                    <h1 class="text-8xl font-bold text-white">#Your</h1>
-                    <h1 class="text-8xl font-bold text-white">Damn</h1>
-                    <h1 class="text-8xl font-bold text-[#FFCC00]">Burger</h1>
-                    <div class="flex gap-6">
-                        <button class="bg-[#FFCC00] border border-[#FFCC00] text-black  hover:bg-transparent hover:text-white px-3 py-1 rounded font-medium mt-8 transition duration-300"><a href="/src/ordernow.html">Order Now</a></button>
-                        <button class="border border-[#FFCC00] text-white px-3 py-1 rounded font-medium mt-8">Book Table</button>   
-                    </div>            
-                </div>
-                  
-                <!-- Right Container -->
-                <div class="max-w-[60%] my-10">
-                    <img src="assets/hero.png" alt="" class="max-w-[700px]" loading="lazy">
-                </div>
-    
-            </div>
+        <div
+          id="menu"
+          class="hidden md:flex flex-wrap gap-4 md:gap-8 lg:gap-12 mt-2 md:mt-0"
+        >
+          <h1 class="cursor-pointer hover:text-[#ffcc00] duration-300">
+            Our Menu
+          </h1>
+          <h1 class="cursor-pointer hover:text-[#ffcc00] duration-300">
+            Download App
+          </h1>
+          <h1 class="cursor-pointer hover:text-[#ffcc00] duration-300">
+            About Us
+          </h1>
+          <h1 class="cursor-pointer hover:text-[#ffcc00] duration-300">
+            Offers
+          </h1>
+          <h1 class="cursor-pointer hover:text-[#ffcc00] duration-300">
+            Locate
+          </h1>
         </div>
-        
-        <!-- Food item list-->
-        <div class="px-32 flex flex-col items-center">
-            <h2 class="text-black pt-12 font-bold text-3xl">Select Your Food</h2>
-            <!-- Food Menu -->
-            <div class="flex flex-wrap justify-center gap-20 pt-10 pb-10">
 
-                <div class="flex flex-col items-center cursor-pointer">
-                    <img src="/assets/burger.gif" alt="" class="w-24" loading="lazy">
-                    <p class="font-semibold">Burgers</p>
-                </div>
-                <div class="flex flex-col items-center cursor-pointer">
-                    <img src="/assets/coffee.gif" alt="" class="w-24" loading="lazy">
-                    <p class="font-semibold">Coffee</p>
-                </div>
-                <div class="flex flex-col items-center cursor-pointer">
-                    <img src="/assets/french-fries.gif" alt="" class="w-24">
-                    <p class="font-semibold">French-Fries</p>
-                </div>
-                <div class="flex flex-col items-center cursor-pointer">
-                    <img src="/assets/non-veg.gif" alt="" class="w-24">
-                    <p class="font-semibold">Non-veg Burgers</p>
-                </div>
-                <div class="flex flex-col items-center cursor-pointer">
-                    <img src="/assets/happy-meal.gif" alt="" class="w-24">
-                    <p class="font-semibold">Happy Meal</p>
-                </div>
-                <div class="flex flex-col items-center cursor-pointer">
-                    <img src="/assets/beverage.gif" alt="" class="w-24">
-                    <p class="font-semibold">Beverages</p>
-                </div>
-
-            </div>
+        <div class="flex flex-wrap gap-4 md:gap-6 mt-2 md:mt-0">
+          <button class="flex items-center gap-1">
+            <i class="fa-solid fa-user" style="color: #ffcc00"></i>
+            <a href="https://www.mcdonalds.com/us/en-us.html">Login</a>
+          </button>
+          <button class="flex items-center gap-1">
+            <i class="fa-solid fa-magnifying-glass" style="color: #ffcc00"></i>
+            Search
+          </button>
         </div>
-        
-        <!-- Cart Section -->
-        <div class="w-full mt-10 pb-16 bg-[#f8f8f873]">
-            <h2 class="text-black pt-12 font-bold text-3xl text-center">Our Best Sell</h2>
-        
-            <p class="text-center mt-2 text-gray-500 text-sm font-semibold">
-                Satisfy your cravings with these fresh and flavoursome burgers.
+        <div id="menu-icon" class="md:hidden flex items-center cursor-pointer">
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden bg-black text-white px-4 py-2">
+        <h1 class="cursor-pointer hover:text-[#ffcc00] duration-300 py-2">
+          Our Menu
+        </h1>
+        <h1 class="cursor-pointer hover:text-[#ffcc00] duration-300 py-2">
+          Download App
+        </h1>
+        <h1 class="cursor-pointer hover:text-[#ffcc00] duration-300 py-2">
+          About Us
+        </h1>
+        <h1 class="cursor-pointer hover:text-[#ffcc00] duration-300 py-2">
+          Offers
+        </h1>
+        <h1 class="cursor-pointer hover:text-[#ffcc00] duration-300 py-2">
+          Locate
+        </h1>
+      </div>
+
+      <!-- Hero section -->
+      <div class="w-full bg-black">
+        <div
+          class="hero-section bg-black flex flex-col lg:flex-row gap-5 justify-between items-center px-4 md:px-8 lg:px-16 xl:px-32 pt-10 mx-auto max-w-[1440px]"
+        >
+          <!-- Left Container -->
+          <div class="max-w-full lg:max-w-[40%] p-5">
+            <p class="text-sm font-semibold text-white">
+              SO...WILL YOU EAT ME?
             </p>
-            <div class="flex flex-wrap justify-center gap-5 mt-6 text-gray-500 text-sm">
-                <div class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer">Filter <i class="fa-solid fa-filter text-sm"></i></div>
-                <div class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer">Short By <i class="fa-solid fa-angle-down"></i></div>
-                <div class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer">Pure veg</div>
-                <div class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer">Less than 30 mins</div>
-                <div class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer">Rs. 300-Rs. 600</div>
-                <div class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer">Less than Rs. 300</div>
+            <h1 class="text-5xl md:text-6xl lg:text-8xl font-bold text-white">
+              #Your
+            </h1>
+            <h1 class="text-5xl md:text-6xl lg:text-8xl font-bold text-white">
+              Damn
+            </h1>
+            <h1
+              class="text-5xl md:text-6xl lg:text-8xl font-bold text-[#FFCC00]"
+            >
+              Burger
+            </h1>
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
+              <button
+                class="bg-[#FFCC00] border border-[#FFCC00] text-black hover:bg-transparent hover:text-white px-3 py-1 rounded font-medium transition duration-300"
+              >
+                <a href="/src/ordernow.html">Order Now</a>
+              </button>
+              <button
+                class="border border-[#FFCC00] text-white px-3 py-1 rounded font-medium"
+              >
+                Book Table
+              </button>
             </div>
+          </div>
 
-            <!-- All Carts -->
-            <div class="flex flex-wrap gap-6 justify-center items-center mt-14">
-                <!-- Cart div 1-->
-                <div class="hover:bg-zinc-100 w-52 p-2 rounded-md hover:scale-105 duration-300 hover:shadow-md cursor-pointer">
-                    <!-- image div -->
-                    <div class="w-full bg-[#f8b756d7] flex relative justify-center items-center rounded-md">
-                        <img src="./assets/cart-polygon.svg" class="h-32 w-full">
-                        <img src="./assets/image 2.svg" class="absolute w-44 top-5">
-                    </div>
-                    <div class="flex gap-10 mt-5">
-                        <p class="text-sm font-bold">Mcdon burger fries and coke</p>
-                        <div class="flex items-baseline gap-0.5">
-                            <i class="fa-solid fa-star fa-xs" style="color: #FFCC00;"></i>
-                            <p class="text-xs">4.5</p>
-                        </div>
-                    </div>
-                    <p class="text-xs mt-1">Khake dekho mja aa jayega </p>
-                    <div class="flex justify-between items-center my-1">
-                        <p class="text-sm font-bold">$30.00</p>
-                        <button class="bg-[#FFCC00] p-1 rounded-full w-6 h-6 flex justify-center items-center font-semibold">+</button>
-                    </div>
+          <!-- Right Container -->
+          <div class="max-w-full lg:max-w-[60%] my-10">
+            <img
+              src="assets/hero.png"
+              alt=""
+              class="max-w-full lg:max-w-[700px]"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
 
+      <!-- Food item list-->
+      <div class="px-4 md:px-8 lg:px-16 xl:px-32 flex flex-col items-center">
+        <h2 class="text-black pt-8 md:pt-12 font-bold text-2xl md:text-3xl">
+          Select Your Food
+        </h2>
+        <!-- Food Menu -->
+        <div
+          class="flex flex-wrap justify-center gap-8 md:gap-16 lg:gap-18 pt-6 md:pt-10 pb-6 md:pb-10"
+        >
+          <div class="flex flex-col items-center cursor-pointer">
+            <img
+              src="/assets/burger.gif"
+              alt=""
+              class="w-20 md:w-24"
+              loading="lazy"
+            />
+            <p class="font-semibold text-sm md:text-base">Burgers</p>
+          </div>
+          <div class="flex flex-col items-center cursor-pointer">
+            <img
+              src="/assets/coffee.gif"
+              alt=""
+              class="w-20 md:w-24"
+              loading="lazy"
+            />
+            <p class="font-semibold text-sm md:text-base">Coffee</p>
+          </div>
+          <div class="flex flex-col items-center cursor-pointer">
+            <img src="/assets/french-fries.gif" alt="" class="w-20 md:w-24" />
+            <p class="font-semibold text-sm md:text-base">French-Fries</p>
+          </div>
+          <div class="flex flex-col items-center cursor-pointer">
+            <img src="/assets/non-veg.gif" alt="" class="w-20 md:w-24" />
+            <p class="font-semibold text-sm md:text-base">Non-veg Burgers</p>
+          </div>
+          <div class="flex flex-col items-center cursor-pointer">
+            <img src="/assets/happy-meal.gif" alt="" class="w-20 md:w-24" />
+            <p class="font-semibold text-sm md:text-base">Happy Meal</p>
+          </div>
+          <div class="flex flex-col items-center cursor-pointer">
+            <img src="/assets/beverage.gif" alt="" class="w-20 md:w-24" />
+            <p class="font-semibold text-sm md:text-base">Beverages</p>
+          </div>
+        </div>
+      </div>
 
-                </div>
+      <!-- Cart Section -->
+      <div class="w-full mt-10 pb-16 bg-[#f8f8f873]">
+        <h2
+          class="text-black pt-8 md:pt-12 font-bold text-2xl md:text-3xl text-center"
+        >
+          Our Best Sell
+        </h2>
 
-                <!-- Cart div 2-->
-                <div class="hover:bg-zinc-100 w-52 p-2 rounded-md hover:scale-105 duration-300 hover:shadow-md cursor-pointer">
-                    <!-- image div -->
-                    <div class="w-full bg-[#f8b756d7] flex relative justify-center items-center rounded-md">
-                        <img src="./assets/cart-polygon.svg" class="h-32 w-full">
-                        <img src="./assets/image 3.svg" class="absolute w-44 -top-2.5">
-                    </div>
-                    <div class="flex gap-10 mt-5">
-                        <p class="text-sm font-bold">Mcdon burger fries and coke</p>
-                        <div class="flex items-baseline gap-0.5">
-                            <i class="fa-solid fa-star fa-xs" style="color: #FFCC00;"></i>
-                            <p class="text-xs">4.5</p>
-                        </div>
-                    </div>
-                    <p class="text-xs mt-1">Khake dekho mja aa jayega </p>
-                    <div class="flex justify-between items-center my-1">
-                        <p class="text-sm font-bold">$30.00</p>
-                        <button class="bg-[#FFCC00] p-1 rounded-full w-6 h-6 flex justify-center items-center font-semibold">+</button>
-                    </div>
+        <p class="text-center mt-2 text-gray-500 text-sm font-semibold">
+          Satisfy your cravings with these fresh and flavoursome burgers.
+        </p>
 
-
-                </div>
-
-                <!-- Cart div 3-->
-                <div class="hover:bg-zinc-100 w-52 p-2 rounded-md hover:scale-105 duration-300 hover:shadow-md cursor-pointer">
-                    <!-- image div -->
-                    <div class="w-full bg-[#f8b756d7] flex relative justify-center items-center rounded-md">
-                        <img src="./assets/cart-polygon.svg" class="h-32 w-full">
-                        <img src="./assets/image 4.svg" class="absolute w-40 top-4">
-                    </div>
-                    <div class="flex gap-10 mt-5">
-                        <p class="text-sm font-bold">Mcdon burger fries and coke</p>
-                        <div class="flex items-baseline gap-0.5">
-                            <i class="fa-solid fa-star fa-xs" style="color: #FFCC00;"></i>
-                            <p class="text-xs">4.5</p>
-                        </div>
-                    </div>
-                    <p class="text-xs mt-1">Khake dekho mja aa jayega </p>
-                    <div class="flex justify-between items-center my-1">
-                        <p class="text-sm font-bold">$30.00</p>
-                        <button class="bg-[#FFCC00] p-1 rounded-full w-6 h-6 flex justify-center items-center font-semibold">+</button>
-                    </div>
-
-
-                </div>
-
-                <!-- Cart div 4-->
-                <div class="hover:bg-zinc-100 w-52 p-2 rounded-md hover:scale-105 duration-300 hover:shadow-md cursor-pointer">
-                    <!-- image div -->
-                    <div class="w-full bg-[#f8b756d7] flex relative justify-center items-center rounded-md">
-                        <img src="./assets/cart-polygon.svg" class="h-32 w-full">
-                        <img src="./assets/image 5.svg" class="absolute w-44 top-3">
-                    </div>
-                    <div class="flex gap-10 mt-5">
-                        <p class="text-sm font-bold">Mcdon burger fries and coke</p>
-                        <div class="flex items-baseline gap-0.5">
-                            <i class="fa-solid fa-star fa-xs" style="color: #FFCC00;"></i>
-                            <p class="text-xs">4.5</p>
-                        </div>
-                    </div>
-                    <p class="text-xs mt-1">Khake dekho mja aa jayega </p>
-                    <div class="flex justify-between items-center my-1">
-                        <p class="text-sm font-bold">$30.00</p>
-                        <button class="bg-[#FFCC00] p-1 rounded-full w-6 h-6 flex justify-center items-center font-semibold">+</button>
-                    </div>
-
-
-                </div>
-
-                <!-- Cart div 4-->
-                <div class="hover:bg-zinc-100 w-52 p-2 rounded-md hover:scale-105 duration-300 hover:shadow-md cursor-pointer">
-                    <!-- image div -->
-                    <div class="w-full bg-[#F8B756] flex relative justify-center items-center rounded-md">
-                        <img src="./assets/cart-polygon.svg" class="h-32 w-full">
-                        <img src="./assets/image 2.svg" class="absolute w-44 top-5">
-                    </div>
-                    <div class="flex gap-10 mt-5">
-                        <p class="text-sm font-bold">Mcdon burger fries and coke</p>
-                        <div class="flex items-baseline gap-0.5">
-                            <i class="fa-solid fa-star fa-xs" style="color: #FFCC00;"></i>
-                            <p class="text-xs">4.5</p>
-                        </div>
-                    </div>
-                    <p class="text-xs mt-1">Khake dekho mja aa jayega </p>
-                    <div class="flex justify-between items-center my-1">
-                        <p class="text-sm font-bold">$30.00</p>
-                        <button class="bg-[#FFCC00] p-1 rounded-full w-6 h-6 flex justify-center items-center font-semibold">+</button>
-                    </div>
-
-
-                </div>
-                
-
-            </div>
-            
+        <div
+          class="flex flex-wrap justify-center gap-4 md:gap-5 lg:gap-6 mt-6 text-gray-500 text-xs md:text-sm"
+        >
+          <div
+            class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer"
+          >
+            Filter <i class="fa-solid fa-filter text-xs md:text-sm"></i>
+          </div>
+          <div
+            class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer"
+          >
+            Short By <i class="fa-solid fa-angle-down text-xs md:text-sm"></i>
+          </div>
+          <div
+            class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer"
+          >
+            Pure veg
+          </div>
+          <div
+            class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer"
+          >
+            Less than 30 mins
+          </div>
+          <div
+            class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer"
+          >
+            Rs. 300-Rs. 600
+          </div>
+          <div
+            class="border rounded-md py-1 px-2 hover:bg-zinc-100 duration-200 cursor-pointer"
+          >
+            Less than Rs. 300
+          </div>
         </div>
 
-        <!-- Best Healthy Ingredients -->
-        <div class="mt-20 max-w-[1440px] mx-auto mb-10">
-            <h1 class="text-center text-black font-bold text-3xl">Best Healthy Ingredients</h1>
-            <p class=" text-center pt-2 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, iusto.</p>
-            
-            <!-- Burger Layer -->
-            <div class="flex flex-col justify-center items-center relative">
-                <!-- Burger Photo -->
-                <img src="/assets/burgerinfo.png" loading="lazy" class="z-10 w-[600px]">
-                
-                <!-- Layer 1 -->
-                <div class="absolute left-72 top-40">
-                    <h2 class="text-xl font-extrabold text-[#EA0025]">Bun</h2>
-                    <p class="text-xs mt-2.5"><i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Make Regular</p>
-                    <p class="text-xs mt-1"><i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Home Made</p>
-                </div>
-                
-                <!-- Layer 2 -->
-                <div class="absolute left-64 top-96">
-                    <h2 class="text-xl font-extrabold text-[#EA0025]">Patty</h2>
-                    <p class="text-xs mt-2.5"><i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Make Regular</p>
-                    <p class="text-xs mt-1"><i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Home Made</p>
-                </div>
-
-                <!-- Layer 3 -->
-                <div class="absolute right-64 top-24">
-                    <h2 class="text-xl font-extrabold text-[#EA0025]">Fresh Food</h2>
-                    <p class="text-xs mt-2.5"><i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Make Regular</p>
-                    <p class="text-xs mt-1"><i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Home Made</p>
-                </div>
-
-                <!-- Layer 4 -->
-                <div class="absolute right-72 top-96">
-                    <h2 class="text-xl font-extrabold text-[#EA0025]">Cheese</h2>
-                    <p class="text-xs mt-2.5"><i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Make Regular</p>
-                    <p class="text-xs mt-1"><i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Home Made</p>
-                </div>
-            
-                <!-- Layer Option Arrow -->
-                <img src="/assets/smallarrow.png" loading="lazy" class="absolute w-1/4 top-20 left-72">
-                <img src="/assets/smallarrow.png" loading="lazy" class="absolute w-1/4 top-80 left-80">
-                <img src="/assets/largearrow.png" loading="lazy" class="absolute w-1/4 rotate-180 right-96 top-32">
-                <img src="/assets/largearrow2.png" loading="lazy" class="absolute w-1/4 right-96 top-80 ">
-                
-                <!-- Read More -->
-                <button class="bg-[#EA0025] text-white py-1.5 px-6 rounded-md text-sm font-semibold">Read More</button>
+        <!-- All Carts -->
+        <div
+          class="flex flex-wrap gap-4 md:gap-6 justify-center items-center mt-10 md:mt-14"
+        >
+          <!-- Cart div 1-->
+          <div
+            class="hover:bg-zinc-100 w-40 md:w-48 lg:w-52 p-2 rounded-md hover:scale-105 duration-300 hover:shadow-md cursor-pointer"
+          >
+            <!-- image div -->
+            <div
+              class="w-full bg-[#f8b756d7] flex relative justify-center items-center rounded-md"
+            >
+              <img
+                src="./assets/cart-polygon.svg"
+                class="h-24 md:h-28 lg:h-32 w-full"
+              />
+              <img
+                src="./assets/image 2.svg"
+                class="absolute w-36 md:w-40 lg:w-44 top-3 md:top-4 lg:top-5"
+              />
             </div>
-
-        </div>
-
-        <!-- Offer Template -->
-        <div class="my-20 max-w-[1440px] mx-auto">
-            <a href="#" class="flex justify-center"><img src="assets/Offer.png" loading="lazy" class="rounded-md w-10/12 "></a>
-           
-        </div>
-
-        <!-- Footer Section -->
-        <div class="w-full bg-[#F02228]">
-            <div class="bg-[#F02228] flex flex-wrap justify-end gap-52 relative py-5 px-20 max-w-[1440px] mx-auto text-white">
-                <img src="/assets/logo.svg" class="w-72 absolute -top-16 left-8" >
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <i class="fa-brands fa-whatsapp fa-bounce text-3xl"></i>
-                    <p class="font-semibold">(+91) 9319-020-676</p>
-                </div>
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-phone fa-shake text-2xl"></i>
-                    <p class="font-semibold">(+91) 9319-020-676</p>
-                </div>
-                <div class="flex items-center gap-5 text-xl">
-                    <i class="fa-brands fa-facebook-f cursor-pointer hover:scale-110 duration-200"></i>
-                    <i class="fa-brands fa-x-twitter cursor-pointer hover:scale-110 duration-200"></i>
-                    <i class="fa-brands fa-youtube cursor-pointer hover:scale-110 duration-200"></i>
-                    <i class="fa-brands fa-instagram cursor-pointer hover:scale-110 duration-200"></i>
-                </div>
-                    
+            <div class="flex gap-2 md:gap-6 mt-3 md:mt-5">
+              <p class="text-xs md:text-sm font-bold">
+                Mcdon burger fries and coke
+              </p>
+              <div class="flex items-baseline gap-0.5">
+                <i class="fa-solid fa-star fa-xs" style="color: #ffcc00"></i>
+                <p class="text-xs">4.5</p>
+              </div>
             </div>
-        </div>
-
-        <!-- Main Footer -->
-        <div class="w-full bg-black">
-            <div class="bg-black flex justify-between flex-wrap py-16 px-36 max-w-[1440px] mx-auto">
-                <!-- One col -->
-                <div class="text-white text-sm leading-7">
-                    <h3 class="font-semibold text-base mb-5">About Us</h3>
-                    <p>About Us Overview</p>
-                    <p>Leadership Team</p>
-                    <p>Values in Action</p>
-                    <p>Franchising info</p>
-                    <p>Recalls & Alerts</p>
-                    <p>Real Estate</p>
-                    <p>Accessibility</p>
-                    <p>Investor Relations</p>
-                    <p>News & Notifications</p>
-                </div>
-    
-                <!-- Second col -->
-                <div class="text-white text-sm leading-7">
-                    <h3 class="font-semibold text-base mb-5">Services</h3>
-                    <p>Services Overview</p>
-                    <p>Wi-Fi</p>
-                    <p>PlayPlaces & Parties</p>
-                    <p>McDelivery</p>
-                    <p>MobileOrder & Pay</p>
-                    <p>Trending Now</p>
-                    <p>McDonald's Merchandise</p>
-                    <p>Family Fun Hub</p>
-                    <p>MyMcDonald's Rewards</p>
-                    <p>McCafe</p>
-                </div>
-    
-                <!-- Third col -->
-                <div class="text-white text-sm leading-7">
-                    <h3 class="font-semibold text-base mb-5">Community</h3>
-                    <p>Community Overview</p>
-                    <p>Now Serving</p>
-                    <p>HACER Scholarships for</p>
-                    <p>Hispanic Students</p>
-                    <p>Ronald McDonald House</p>
-                    <p>Charities</p>
-                    <p>McDonald's Asian Pacific</p>
-                    <p>American</p>
-                    <p>McDonald's international</p>
-                    <p>Black and Positively Golden</p>
-                    <p>McDonald's LGBTQ+</p>
-                    
-                </div>
-    
-                <!--Fourth col -->
-                <div class="text-white text-sm leading-7">
-                    <h3 class="font-semibold text-base mb-5">Contact Us</h3>
-                    <p>Contact Us Overview</p>
-                    <p>Gift Card & FAQs</p>
-                    <p>Donations</p>
-                    <p>Employment</p>
-                    <p>Customer Feedback</p>
-                    <p>Frequently Asked</p>
-                    <p>Questions</p>
-                    <form action="" class="mt-4 relative flex items-center">
-                        <input type="text" placeholder="Write your email" class="bg-[#4D4F54] py-1 px-3 rounded-md outline-none"/>
-                        <i class="fa-regular fa-paper-plane fa-fade text-lg absolute right-3 cursor-pointer text-black"></i>
-                    </form>
-                </div>
-
-
+            <p class="text-xs mt-1">Khake dekho mja aa jayega</p>
+            <div class="flex justify-between items-center my-1">
+              <p class="text-xs md:text-sm font-bold">$30.00</p>
+              <button
+                class="bg-[#FFCC00] p-1 rounded-full w-5 h-5 md:w-6 md:h-6 flex justify-center items-center font-semibold"
+              >
+                +
+              </button>
             </div>
+          </div>
+
+          <!-- Repeat for other cart divs -->
+          <!-- Cart div 2-->
+          <div
+            class="hover:bg-zinc-100 w-40 md:w-48 lg:w-52 p-2 rounded-md hover:scale-105 duration-300 hover:shadow-md cursor-pointer"
+          >
+            <!-- image div -->
+            <div
+              class="w-full bg-[#f8b756d7] flex relative justify-center items-center rounded-md"
+            >
+              <img
+                src="./assets/cart-polygon.svg"
+                class="h-24 md:h-28 lg:h-32 w-full"
+              />
+              <img
+                src="./assets/image 3.svg"
+                class="absolute w-36 md:w-40 lg:w-44 top-3 md:top-4 lg:top-5"
+              />
+            </div>
+            <div class="flex gap-2 md:gap-6 mt-3 md:mt-5">
+              <p class="text-xs md:text-sm font-bold">
+                Mcdon burger fries and coke
+              </p>
+              <div class="flex items-baseline gap-0.5">
+                <i class="fa-solid fa-star fa-xs" style="color: #ffcc00"></i>
+                <p class="text-xs">4.5</p>
+              </div>
+            </div>
+            <p class="text-xs mt-1">Khake dekho mja aa jayega</p>
+            <div class="flex justify-between items-center my-1">
+              <p class="text-xs md:text-sm font-bold">$30.00</p>
+              <button
+                class="bg-[#FFCC00] p-1 rounded-full w-5 h-5 md:w-6 md:h-6 flex justify-center items-center font-semibold"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          <!-- Cart div 3-->
+          <div
+            class="hover:bg-zinc-100 w-40 md:w-48 lg:w-52 p-2 rounded-md hover:scale-105 duration-300 hover:shadow-md cursor-pointer"
+          >
+            <!-- image div -->
+            <div
+              class="w-full bg-[#f8b756d7] flex relative justify-center items-center rounded-md"
+            >
+              <img
+                src="./assets/cart-polygon.svg"
+                class="h-24 md:h-28 lg:h-32 w-full"
+              />
+              <img
+                src="./assets/image 4.svg"
+                class="absolute w-36 md:w-40 lg:w-44 top-3 md:top-4 lg:top-5"
+              />
+            </div>
+            <div class="flex gap-2 md:gap-6 mt-3 md:mt-5">
+              <p class="text-xs md:text-sm font-bold">
+                Mcdon burger fries and coke
+              </p>
+              <div class="flex items-baseline gap-0.5">
+                <i class="fa-solid fa-star fa-xs" style="color: #ffcc00"></i>
+                <p class="text-xs">4.5</p>
+              </div>
+            </div>
+            <p class="text-xs mt-1">Khake dekho mja aa jayega</p>
+            <div class="flex justify-between items-center my-1">
+              <p class="text-xs md:text-sm font-bold">$30.00</p>
+              <button
+                class="bg-[#FFCC00] p-1 rounded-full w-5 h-5 md:w-6 md:h-6 flex justify-center items-center font-semibold"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          <!-- Cart div 4-->
+          <div
+            class="hover:bg-zinc-100 w-40 md:w-48 lg:w-52 p-2 rounded-md hover:scale-105 duration-300 hover:shadow-md cursor-pointer"
+          >
+            <!-- image div -->
+            <div
+              class="w-full bg-[#f8b756d7] flex relative justify-center items-center rounded-md"
+            >
+              <img
+                src="./assets/cart-polygon.svg"
+                class="h-24 md:h-28 lg:h-32 w-full"
+              />
+              <img
+                src="./assets/image 5.svg"
+                class="absolute w-36 md:w-40 lg:w-44 top-3 md:top-4 lg:top-5"
+              />
+            </div>
+            <div class="flex gap-2 md:gap-6 mt-3 md:mt-5">
+              <p class="text-xs md:text-sm font-bold">
+                Mcdon burger fries and coke
+              </p>
+              <div class="flex items-baseline gap-0.5">
+                <i class="fa-solid fa-star fa-xs" style="color: #ffcc00"></i>
+                <p class="text-xs">4.5</p>
+              </div>
+            </div>
+            <p class="text-xs mt-1">Khake dekho mja aa jayega</p>
+            <div class="flex justify-between items-center my-1">
+              <p class="text-xs md:text-sm font-bold">$30.00</p>
+              <button
+                class="bg-[#FFCC00] p-1 rounded-full w-5 h-5 md:w-6 md:h-6 flex justify-center items-center font-semibold"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          <!-- Cart div 5-->
+          <div
+            class="hover:bg-zinc-100 w-40 md:w-48 lg:w-52 p-2 rounded-md hover:scale-105 duration-300 hover:shadow-md cursor-pointer"
+          >
+            <!-- image div -->
+            <div
+              class="w-full bg-[#F8B756] flex relative justify-center items-center rounded-md"
+            >
+              <img
+                src="./assets/cart-polygon.svg"
+                class="h-24 md:h-28 lg:h-32 w-full"
+              />
+              <img
+                src="./assets/image 2.svg"
+                class="absolute w-36 md:w-40 lg:w-44 top-3 md:top-4 lg:top-5"
+              />
+            </div>
+            <div class="flex gap-2 md:gap-6 mt-3 md:mt-5">
+              <p class="text-xs md:text-sm font-bold">
+                Mcdon burger fries and coke
+              </p>
+              <div class="flex items-baseline gap-0.5">
+                <i class="fa-solid fa-star fa-xs" style="color: #ffcc00"></i>
+                <p class="text-xs">4.5</p>
+              </div>
+            </div>
+            <p class="text-xs mt-1">Khake dekho mja aa jayega</p>
+            <div class="flex justify-between items-center my-1">
+              <p class="text-xs md:text-sm font-bold">$30.00</p>
+              <button
+                class="bg-[#FFCC00] p-1 rounded-full w-5 h-5 md:w-6 md:h-6 flex justify-center items-center font-semibold"
+              >
+                +
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
 
-        
+      <!-- Best Healthy Ingredients -->
+      <div class="mt-20 max-w-[1440px] mx-auto mb-10 px-4">
+        <h1 class="text-center text-black font-bold text-2xl md:text-3xl">
+          Best Healthy Ingredients
+        </h1>
+        <p class="text-center pt-2 text-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+          iusto.
+        </p>
 
+        <!-- Burger Layer -->
+        <div
+          class="flex flex-col justify-center items-center relative mt-10 md:mt-16"
+        >
+          <!-- Burger Photo -->
+          <img
+            src="/assets/burgerinfo.png"
+            loading="lazy"
+            class="z-10 w-64 sm:w-80 md:w-96 lg:w-[600px]"
+          />
 
+          <!-- Layer 1 -->
+          <div
+            class="absolute left-10 md:left-36 lg:left-72 top-32 lg:top-40 text-center lg:text-left"
+          >
+            <h2 class="text-sm md:text-xl font-extrabold text-[#EA0025]">
+              Bun
+            </h2>
+            <p class="text-xs mt-1.5 md:mt-2.5">
+              <i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Make
+              Regular
+            </p>
+            <p class="text-xs mt-1">
+              <i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Home Made
+            </p>
+          </div>
 
+          <!-- Layer 2 -->
+          <div
+            class="absolute left-10 md:left-24 lg:left-64 top-64 md:top-80 lg:top-96 text-center lg:text-left"
+          >
+            <h2 class="text-sm md:text-xl font-extrabold text-[#EA0025]">
+              Patty
+            </h2>
+            <p class="text-xs mt-1.5 md:mt-2.5">
+              <i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Make
+              Regular
+            </p>
+            <p class="text-xs mt-1">
+              <i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Home Made
+            </p>
+          </div>
+
+          <!-- Layer 3 -->
+          <div
+            class="absolute right-10 md:right-36 lg:right-64 top-20 lg:top-24 text-center lg:text-right"
+          >
+            <h2 class="text-sm md:text-xl font-extrabold text-[#EA0025]">
+              Fresh Food
+            </h2>
+            <p class="text-xs mt-1.5 md:mt-2.5">
+              <i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Make
+              Regular
+            </p>
+            <p class="text-xs mt-1">
+              <i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Home Made
+            </p>
+          </div>
+
+          <!-- Layer 4 -->
+          <div
+            class="absolute right-10 md:right-24 lg:right-72 top-64 md:top-80 lg:top-96 text-center lg:text-right"
+          >
+            <h2 class="text-sm md:text-xl font-extrabold text-[#EA0025]">
+              Cheese
+            </h2>
+            <p class="text-xs mt-1.5 md:mt-2.5">
+              <i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Make
+              Regular
+            </p>
+            <p class="text-xs mt-1">
+              <i class="fa-solid fa-check text-xs text-[#EA0025]"></i> Home Made
+            </p>
+          </div>
+
+          <!-- Layer Option Arrow -->
+          <img
+            src="/assets/smallarrow.png"
+            loading="lazy"
+            class="absolute w-20 md:w-1/4 top-24 md:top-20 left-20 md:left-36 lg:left-72"
+          />
+          <img
+            src="/assets/smallarrow.png"
+            loading="lazy"
+            class="absolute w-20 md:w-1/4 top-56 md:top-64 left-28 md:left-40 lg:left-80"
+          />
+          <img
+            src="/assets/largearrow.png"
+            loading="lazy"
+            class="absolute w-20 md:w-1/4 rotate-180 right-24 md:right-36 lg:right-96 top-28 md:top-32"
+          />
+          <img
+            src="/assets/largearrow2.png"
+            loading="lazy"
+            class="absolute w-20 md:w-1/4 right-24 md:right-36 lg:right-96 top-64 md:top-80"
+          />
+
+          <!-- Read More -->
+          <button
+            class="bg-[#EA0025] text-white py-1.5 px-6 rounded-md text-sm font-semibold mt-6"
+          >
+            Read More
+          </button>
+        </div>
+      </div>
+
+      <!-- Offer Template -->
+      <div class="my-20 max-w-[1440px] mx-auto px-4">
+        <a href="#" class="flex justify-center">
+          <img
+            src="/assets/Offer.png"
+            loading="lazy"
+            class="rounded-md w-full md:w-10/12"
+          />
+        </a>
+      </div>
+
+      <!-- Footer Section -->
+      <div class="w-full bg-[#F02228]">
+        <div
+          class="bg-[#F02228] flex flex-wrap justify-center md:justify-end gap-10 md:gap-20 lg:gap-52 relative py-5 px-5 md:px-20 max-w-[1440px] mx-auto text-white"
+        >
+          <img
+            src="/assets/logo.svg"
+            class="w-36 md:w-52 lg:w-72 absolute -top-10 md:-top-16 left-1/2 md:left-8 transform -translate-x-1/2 md:transform-none"
+          />
+          <div class="flex items-center gap-2 cursor-pointer mt-16 md:mt-0">
+            <i class="fa-brands fa-whatsapp fa-bounce text-xl md:text-3xl"></i>
+            <p class="font-semibold text-sm md:text-base">(+91) 9319-020-676</p>
+          </div>
+          <div class="flex items-center gap-2 cursor-pointer mt-4 md:mt-0">
+            <i class="fa-solid fa-phone fa-shake text-xl md:text-2xl"></i>
+            <p class="font-semibold text-sm md:text-base">(+91) 9319-020-676</p>
+          </div>
+          <div
+            class="flex items-center gap-4 md:gap-5 text-lg md:text-xl mt-4 md:mt-0"
+          >
+            <i
+              class="fa-brands fa-facebook-f cursor-pointer hover:scale-110 duration-200"
+            ></i>
+            <i
+              class="fa-brands fa-x-twitter cursor-pointer hover:scale-110 duration-200"
+            ></i>
+            <i
+              class="fa-brands fa-youtube cursor-pointer hover:scale-110 duration-200"
+            ></i>
+            <i
+              class="fa-brands fa-instagram cursor-pointer hover:scale-110 duration-200"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Footer -->
+      <div class="w-full bg-black">
+        <div
+          class="bg-black flex flex-wrap justify-center md:justify-between py-16 px-5 md:px-16 lg:px-36 max-w-[1440px] mx-auto text-white"
+        >
+          <!-- One col -->
+          <div
+            class="text-sm leading-7 mb-8 md:mb-0 md:mr-10 lg:mr-0 w-full md:w-auto text-center md:text-left"
+          >
+            <h3 class="font-semibold text-base mb-5">About Us</h3>
+            <p>About Us Overview</p>
+            <p>Leadership Team</p>
+            <p>Values in Action</p>
+            <p>Franchising info</p>
+            <p>Recalls & Alerts</p>
+            <p>Real Estate</p>
+            <p>Accessibility</p>
+            <p>Investor Relations</p>
+            <p>News & Notifications</p>
+          </div>
+
+          <!-- Second col -->
+          <div
+            class="text-sm leading-7 mb-8 md:mb-0 md:mr-10 lg:mr-0 w-full md:w-auto text-center md:text-left"
+          >
+            <h3 class="font-semibold text-base mb-5">Services</h3>
+            <p>Services Overview</p>
+            <p>Wi-Fi</p>
+            <p>PlayPlaces & Parties</p>
+            <p>McDelivery</p>
+            <p>MobileOrder & Pay</p>
+            <p>Trending Now</p>
+            <p>McDonald's Merchandise</p>
+            <p>Family Fun Hub</p>
+            <p>MyMcDonald's Rewards</p>
+            <p>McCafe</p>
+          </div>
+
+          <!-- Third col -->
+          <div
+            class="text-sm leading-7 mb-8 md:mb-0 md:mr-10 lg:mr-0 w-full md:w-auto text-center md:text-left"
+          >
+            <h3 class="font-semibold text-base mb-5">Community</h3>
+            <p>Community Overview</p>
+            <p>Now Serving</p>
+            <p>HACER Scholarships for</p>
+            <p>Hispanic Students</p>
+            <p>Ronald McDonald House</p>
+            <p>Charities</p>
+            <p>McDonald's Asian Pacific</p>
+            <p>American</p>
+            <p>McDonald's international</p>
+            <p>Black and Positively Golden</p>
+            <p>McDonald's LGBTQ+</p>
+          </div>
+
+          <!--Fourth col -->
+          <div
+            class="text-sm leading-7 w-full md:w-auto text-center md:text-left"
+          >
+            <h3 class="font-semibold text-base mb-5">Contact Us</h3>
+            <p>Contact Us Overview</p>
+            <p>Gift Card & FAQs</p>
+            <p>Donations</p>
+            <p>Employment</p>
+            <p>Customer Feedback</p>
+            <p>Frequently Asked</p>
+            <p>Questions</p>
+            <form
+              action=""
+              class="mt-4 relative flex items-center justify-center md:justify-start"
+            >
+              <input
+                type="text"
+                placeholder="Write your email"
+                class="bg-[#4D4F54] py-1 px-3 rounded-md outline-none w-full md:w-auto"
+              />
+              <i
+                class="fa-regular fa-paper-plane fa-fade text-lg absolute right-3 cursor-pointer text-black"
+              ></i>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
-</body>
+    <script>
+      document
+        .getElementById("menu-icon")
+        .addEventListener("click", function () {
+          var menu = document.getElementById("mobile-menu");
+          if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden");
+          } else {
+            menu.classList.add("hidden");
+          }
+        });
+    </script>
+  </body>
 </html>
